@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Modpack Setup Guide</title>
+    <style>
+        :root {
+            --bg-color: #1e1e2e;
+            --card-bg: #252538;
+            --accent-color: #89b4fa;
+            --text-color: #cdd6f4;
+            --text-muted: #a6adc8;
+            --success-color: #a6e3a1;
+            --warning-bg: #45475a;
+            --warning-border: #f9e2af;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 700px;
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        h1 {
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+
+        .step {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-number {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            font-weight: bold;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #ffffff;
+        }
+
+        a.btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: opacity 0.2s;
+        }
+
+        a.btn:hover {
+            opacity: 0.9;
+        }
+
+        .note {
+            background-color: var(--warning-bg);
+            border-left: 4px solid var(--warning-border);
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 15px;
+            font-size: 0.95rem;
+        }
+
+        code {
+            background-color: rgba(0,0,0,0.3);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #f38ba8;
+            font-size: 0.95rem;
+            word-break: break-all;
+        }
+
+        ol {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Game Setup Guide</h1>
+    <div class="subtitle">Follow these 3 easy steps to get up and running using Prism Launcher</div>
+
+    <div class="step">
+        <span class="step-number">Step 1</span>
+        <h2>Download Prism Launcher</h2>
+        <p>Prism Launcher is an open-source Minecraft launcher that makes managing custom profiles incredibly easy.</p>
+        <ol>
+            <li>Go to the official website and download the installer for your operating system (Windows, Mac, or Linux).</li>
+            <li>Run the installer and complete the setup wizard.</li>
+            <li>Launch the application once installed. It will ask you to select your language and pick a Java version (the default options work perfectly).</li>
+        </ol>
+        <a href="https://prismlauncher.org/download/" target="_blank" class="btn">Go to Prism Download Page</a>
+    </div>
+
+    <div class="step">
+        <span class="step-number">Step 2</span>
+        <h2>Sign In to Your Account</h2>
+        <p>When you start the launcher for the first time, it will prompt you to log into your Minecraft account.</p>
+        <ol>
+            <li>Click <strong>"Sign in with Microsoft"</strong>, and follow the instructions to sign in.</li>
+        </ol>
+        <div class="note">
+            <strong>⚠️ Tip:</strong> If it errors out, try again in half an hour. It does that sometimes!
+        </div>
+    </div>
+
+    <div class="step">
+        <span class="step-number">Step 3</span>
+        <h2>Import the Profile</h2>
+        <p>Instead of downloading a massive file manually, you can pull the profile directly into Prism using the link below.</p>
+        <ol>
+            <li>Copy this link to your clipboard: <br><br><code>https://dont-spam-me.uk/26.2.zip</code><br><br></li>
+            <li>Inside Prism Launcher, click <strong>Add Instance</strong>.</li>
+            <li>Select <strong>Import</strong> from the menu options.</li>
+            <li>Paste the copied link directly into the URL field and confirm.</li>
+        </ol>
+        <p><em>Once the download finishes, double-click the new profile icon on your dashboard to start playing!</em></p>
+    </div>
+</div>
+
+</body>
+</html>
