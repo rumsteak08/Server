@@ -60,7 +60,9 @@
             "key": "advanced",
             "controlId": "adv-select",
             "label": "Advanced mods",
-            "description": "Carpet, MiniHUD, Litematica, Printer, Auto Clicker, Auto Reconnect, Item Scroller, and World Edit.",
+            "description": "This is highly dependent on what you want, so please download them separately.",
+            "descriptionWhen": { "equals": "Yes" },
+            "urlElement": "No",
             "default": "No",
             "options": [
                 { "value": "No", "label": "No", "urlElement": "No" },

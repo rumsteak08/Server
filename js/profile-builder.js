@@ -24,6 +24,16 @@ function getSelections() {
     ]));
 }
 
+function updateGroupDescription(group, value) {
+    const description = document.querySelector(`[data-config-description="${group.key}"]`);
+    if (!group.descriptionWhen) {
+        description.hidden = false;
+        return;
+    }
+
+    description.hidden = value !== group.descriptionWhen.equals;
+}
+
 function groupIsAvailable(group, currentRam) {
     return !group.minRam || currentRam >= group.minRam;
 }
@@ -46,8 +56,10 @@ function populateTemplate() {
 
         label.textContent = group.label;
         description.textContent = group.description;
+        updateGroupDescription(group, select.value);
         select.replaceChildren(...group.options.map((option) => new Option(option.label, option.value)));
         select.value = group.default;
+        updateGroupDescription(group, select.value);
     });
 }
 
@@ -87,6 +99,8 @@ function updateBuilder() {
             select.value = fallback.value;
             selections[group.key] = fallback.value;
         }
+
+        updateGroupDescription(group, select.value);
     });
 
     const finalSelections = getSelections();
@@ -106,6 +120,8 @@ function updateBuilder() {
             if (!groupIsAvailable(group, currentRam) && group.disabledUrlElement) {
                 return [group.key, group.disabledUrlElement];
             }
+
+            if (group.urlElement) return [group.key, group.urlElement];
 
             return [group.key, getOption(group, finalSelections[group.key]).urlElement];
         }))
