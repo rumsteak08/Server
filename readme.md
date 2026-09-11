@@ -47,3 +47,50 @@ pages/                     HTML content for each application view
 - Add or rename views in `js/config.js`, then add the corresponding page file and navigation control.
 
 No package installation or build step is required.
+
+## Git workflow
+
+Use `main` for everyday development. Cloudflare should deploy from `production`.
+
+```bash
+# Work on the site
+```
+
+```bash
+git switch main
+```
+```bash
+git pull --ff-only origin main
+```
+
+
+```bash
+# Publish completed work to the deployment branch
+```
+
+```bash
+git switch production
+```
+```bash
+git pull --ff-only origin production
+```
+```bash
+git merge --ff-only main
+```
+```bash
+git push origin production
+```
+```bash
+# Return to the working branch
+```
+```bash
+git switch main
+```
+
+Keep the `production` branch deployable. Test changes on `main` before promoting them.
+
+## Releases and tags
+
+Tags identify fixed versions and are separate from the `main` and `production` branches. The `V2` tag is still used by the profile builder download URL in `data/profile-options.json`, so do not delete it unless that URL and its GitHub Release are replaced.
+
+Older tags can be deleted if their GitHub Releases and download links are no longer needed. Deleting a tag from GitHub can make links that reference that tag unavailable, so check the release assets first.
