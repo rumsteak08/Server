@@ -1,7 +1,6 @@
 {
     "download": {
-        "baseUrlBackup": "https://github.com/rumsteak08/Server/releases/download/V2/",
-        "baseUrl": "",
+        "baseUrl": "https://github.com/rumsteak08/Server/releases/download/V2/",
         "filenameTemplate": "{ram}G_{lod}_Anim{animated}_Shader{shaders}_Adv{advanced}.zip"
     },
     "ram": {
