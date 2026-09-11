@@ -1,0 +1,87 @@
+{
+    "download": {
+        "baseUrl": "https://github.com/rumsteak08/Server/releases/download/V1.1/",
+        "filenameTemplate": "{ram}G_{minimap}_{lod}_Anim{animated}_Shader{shaders}_Adv{advanced}.zip"
+    },
+    "ram": {
+        "controlId": "ram-slider",
+        "displayId": "ram-display",
+        "label": "Allocated RAM",
+        "description": "Choose the amount of memory Prism Launcher should allocate to this profile.",
+        "default": 6,
+        "values": [
+            { "value": 2, "label": "2GB", "urlElement": "2" },
+            { "value": 4, "label": "4GB", "urlElement": "4" },
+            { "value": 6, "label": "6GB", "urlElement": "6" },
+            { "value": 8, "label": "8GB", "urlElement": "8" },
+            { "value": 12, "label": "12GB", "urlElement": "12" }
+        ]
+    },
+    "options": [
+        {
+            "key": "minimap",
+            "controlId": "minimap-select",
+            "label": "Mini map",
+            "description": "Choose one mini map or leave it disabled.",
+            "default": "JourneyMap",
+            "options": [
+                { "value": "No", "label": "No", "urlElement": "No" },
+                { "value": "JourneyMap", "label": "Journey Map (recommended)", "urlElement": "JourneyMap" },
+                { "value": "Xaeros", "label": "Xaero's (lighter on resources)", "urlElement": "Xaeros" }
+            ]
+        },
+        {
+            "key": "lod",
+            "controlId": "lod-select",
+            "label": "Level of detail",
+            "description": "Render farther into the world with an optional level-of-detail mod.",
+            "default": "No",
+            "options": [
+                { "value": "No", "label": "No", "urlElement": "No" },
+                { "value": "DistantHorizons", "label": "Distant Horizons (6GB RAM min)", "urlElement": "DistantHorizons", "minRam": 6 },
+                { "value": "Voxy", "label": "Voxy (recommended, 6GB RAM min)", "urlElement": "Voxy", "minRam": 6 }
+            ]
+        },
+        {
+            "key": "animated",
+            "controlId": "animated-select",
+            "label": "Animated mobs",
+            "description": "Add extra mob animation features.",
+            "default": "No",
+            "options": [
+                { "value": "No", "label": "No", "urlElement": "No" },
+                { "value": "Yes", "label": "Yes (4GB RAM min)", "urlElement": "Yes", "minRam": 4 }
+            ]
+        },
+        {
+            "key": "shaders",
+            "controlId": "shaders-select",
+            "label": "Shaders",
+            "description": "Choose a shader preset. Higher presets need more memory.",
+            "default": "No",
+            "options": [
+                { "value": "No", "label": "No", "urlElement": "No" },
+                { "value": "Decent", "label": "Decent (6GB RAM min)", "urlElement": "Decent", "minRam": 6 },
+                { "value": "Exceptional", "label": "Exceptional (8GB RAM min)", "urlElement": "Exceptional", "minRam": 8 },
+                { "value": "Incredible", "label": "Incredible (8GB RAM min and Voxy required)", "urlElement": "Incredible", "minRam": 8, "requires": [{ "key": "lod", "equals": "Voxy" }] }
+            ]
+        },
+        {
+            "key": "advanced",
+            "controlId": "adv-select",
+            "label": "Advanced mods",
+            "description": "Carpet, MiniHUD, Litematica, Printer, Auto Clicker, Auto Reconnect, Item Scroller, and World Edit.",
+            "default": "No",
+            "options": [
+                { "value": "No", "label": "No", "urlElement": "No" },
+                { "value": "Yes", "label": "Yes (4GB RAM min)", "urlElement": "Yes", "minRam": 4 }
+            ]
+        }
+    ],
+    "warnings": [
+        {
+            "targetId": "dh-warning",
+            "when": { "key": "lod", "equalsAny": ["DistantHorizons", "Voxy"] }
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+.mod-list {
+    columns: 2;
+    column-gap: 30px;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.config-container {
+    display: grid;
+    gap: 22px;
+    margin: 28px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 28px 0;
+}
+
+.config-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--ink);
+    font-family: Arial, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.config-desc {
+    margin-bottom: 9px;
+    color: var(--muted);
+    font-size: 0.88rem;
+}

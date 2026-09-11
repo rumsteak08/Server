@@ -1,0 +1,70 @@
+.site-shell {
+    min-height: 100vh;
+    background: radial-gradient(circle at 85% 0%, var(--shell-glow), transparent 32rem), var(--canvas);
+    transition: background 180ms ease;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid var(--line);
+    background: var(--header-bg);
+    backdrop-filter: blur(14px);
+}
+
+.header-inner,
+.page-frame {
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+.header-inner {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+}
+
+.page-frame {
+    padding: 72px 0 100px;
+}
+
+.page-heading {
+    max-width: 760px;
+    margin-bottom: 48px;
+    animation: rise-in 500ms ease both;
+}
+
+.content-grid,
+.join-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 28px;
+    align-items: start;
+}
+
+.steps,
+.join-main,
+.join-sidebar,
+.aside-stack {
+    display: grid;
+    gap: 16px;
+}
+
+.aside-stack,
+.join-sidebar {
+    position: sticky;
+    top: 106px;
+}
+
+.site-footer {
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    padding: 24px 0;
+    font-family: Arial, sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}

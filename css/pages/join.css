@@ -1,0 +1,155 @@
+.join-hero {
+    border-color: var(--lime);
+    background: linear-gradient(120deg, var(--panel-start), var(--surface));
+}
+
+.join-hero h2,
+.join-section h2 {
+    margin-bottom: 8px;
+}
+
+.join-hero p,
+.section-intro {
+    margin-bottom: 0;
+    color: var(--muted);
+}
+
+.server-address {
+    display: grid;
+    gap: 7px;
+    margin-top: 26px;
+}
+
+.address-label {
+    color: var(--muted);
+    font-family: Arial, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.server-address code {
+    border-color: var(--lime);
+    font-size: 1rem;
+}
+
+.section-heading-row {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.section-heading-row h2 {
+    margin-bottom: 0;
+}
+
+.section-heading-row .section-intro {
+    max-width: 220px;
+    font-size: 0.92rem;
+    text-align: right;
+}
+
+.server-destinations {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.server-card {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--ink);
+    padding: 14px 12px;
+    text-decoration: none;
+    transition: border-color 160ms ease, transform 160ms ease;
+}
+
+.server-card:hover {
+    border-color: var(--lime);
+    transform: translateY(-2px);
+}
+
+.server-card-icon {
+    display: inline-grid;
+    place-items: center;
+    min-width: 31px;
+    height: 31px;
+    border: 1px solid var(--lime);
+    color: var(--lime);
+    font-family: Arial, sans-serif;
+    font-size: 0.55rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+}
+
+.server-card strong,
+.server-card small {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.server-card strong {
+    font-size: 0.9rem;
+}
+
+.server-card small {
+    margin-top: 2px;
+    color: var(--muted);
+    font-family: Arial, sans-serif;
+    font-size: 0.66rem;
+}
+
+.server-card-arrow {
+    color: var(--lime);
+    font-size: 1.1rem;
+}
+
+.text-link {
+    color: var(--lime);
+    font-family: Arial, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.text-link:hover {
+    text-decoration: underline;
+}
+
+.join-checklist ol {
+    margin: 16px 0 0;
+    padding-left: 20px;
+}
+
+.join-checklist li {
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+.whitelist-section {
+    max-width: none;
+    margin-top: 28px;
+}
+
+.form-frame {
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--surface);
+}
+
+.form-frame iframe {
+    display: block;
+    width: 100%;
+    min-height: 762px;
+    border: 0;
+}

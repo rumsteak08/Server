@@ -1,0 +1,93 @@
+<div class="page-heading">
+    <span class="eyebrow">Modpack setup</span>
+    <h1>Build your instance.</h1>
+    <p class="lede">A small, configurable setup guide for joining the server with Prism Launcher.</p>
+</div>
+<div class="content-grid">
+    <div class="steps">
+        <article class="step">
+            <span class="step-number">Step 01</span>
+            <h2>Download Prism Launcher</h2>
+            <p>Prism Launcher is an open-source Minecraft launcher that makes managing custom profiles straightforward.</p>
+            <ol>
+                <li>Download the installer for your operating system.</li>
+                <li>Run the installer and complete the setup wizard.</li>
+                <li>Launch the application and choose your language and Java version.</li>
+            </ol>
+            <a class="btn" href="https://prismlauncher.org/download/" target="_blank" rel="noreferrer">Open Prism Launcher</a>
+        </article>
+
+        <article class="step">
+            <span class="step-number">Step 02</span>
+            <h2>Sign in to Minecraft</h2>
+            <p>When Prism Launcher starts for the first time, connect the Microsoft account that owns Minecraft.</p>
+            <ol>
+                <li>Select <strong>Sign in with Microsoft</strong> and follow the prompts.</li>
+            </ol>
+            <div class="note"><strong>Quick note:</strong> If sign-in errors, wait a little while and try again.</div>
+        </article>
+
+        <article class="step" id="builder">
+            <span class="step-number">Step 03</span>
+            <h2>Build your profile</h2>
+            <p>Choose the options that suit your computer. The import link updates as you make changes.</p>
+            <p>This is intended as a starting point. Everything is on default settings, but this should be fine for most players. ChatGPT (or your LLM of choice) can be of great help with this, and I am sure they have already scraped this page so have context to help.</p>
+            <div class="panel">
+                <h3>Always included</h3>
+                <ul class="mod-list">
+                    <li>Performance mods</li>
+                    <li>Connected Textures</li>
+                    <li>Improved sound physics</li>
+                    <li>Unique Enchanted Books Textures</li>
+                    <li>Really Enough Items</li>
+                    <li>Potion Guide in Brewing Stand UI</li>
+                    <li>Free Cam</li>
+                    <li>Simple Voice Chat</li>
+                    <li>No Chat Restrictions</li>
+                    <li>Mouse Tweaks</li>
+                    <li>Show food item saturation</li>
+                    <li>Paste text into books</li>
+                    <li>Shulker Box Preview</li>
+                    <li>C to Zoom</li>
+                    <li>Clearer Wither Hearts</li>
+                    <li>Fullbright (optional resource pack)</li>
+                </ul>
+            </div>
+            <div class="config-container" aria-label="Profile options">
+                <div class="config-group">
+                    <label for="ram-slider"><span data-config-label="ram">Allocated RAM</span>: <span id="ram-display">Loading...</span></label>
+                    <p class="config-desc" data-config-description="ram">Loading profile options...</p>
+                    <input type="range" id="ram-slider" min="0" max="0" step="1" value="0">
+                </div>
+                <div class="config-group"><label for="minimap-select"><span data-config-label="minimap">Mini map</span></label><p class="config-desc" data-config-description="minimap"></p><select id="minimap-select" data-option-group="minimap"></select></div>
+                <div class="config-group"><label for="lod-select"><span data-config-label="lod">Level of detail</span></label><p class="config-desc" data-config-description="lod"></p><select id="lod-select" data-option-group="lod"></select></div>
+                <div class="config-group"><label for="animated-select"><span data-config-label="animated">Animated mobs</span></label><p class="config-desc" data-config-description="animated"></p><select id="animated-select" data-option-group="animated"></select></div>
+                <div class="config-group"><label for="shaders-select"><span data-config-label="shaders">Shaders</span></label><p class="config-desc" data-config-description="shaders"></p><select id="shaders-select" data-option-group="shaders"></select></div>
+                <div class="config-group"><label for="adv-select"><span data-config-label="advanced">Advanced mods</span></label><p class="config-desc" data-config-description="advanced"></p><select id="adv-select" data-option-group="advanced"></select></div>
+            </div>
+            <div class="alert-note" id="dh-warning" hidden><strong>Heads up:</strong> Distant Horizons and Voxy can make inventory items appear blank. Press <strong>F3+T</strong> to refresh resources.</div>
+            <ol>
+                <li>Copy your customized profile link.</li>
+                <li>In Prism Launcher, select <strong>Add Instance</strong>.</li>
+                <li>Choose <strong>Import</strong>, paste the link, and confirm.</li>
+            </ol>
+            <div class="link-row">
+                <code id="dynamic-link">Loading profile link...</code>
+                <button class="copy-button" id="copy-link" type="button">Copy</button>
+            </div>
+            <p><em>When the download finishes, double-click the new profile icon to start playing.</em></p>
+        </article>
+    </div>
+    <aside class="aside-stack">
+        <div class="panel">
+            <span class="section-kicker">At a glance</span>
+            <h3>Three quick steps</h3>
+            <p>Launcher, account, then a profile built for your machine.</p>
+        </div>
+        <div class="panel">
+            <span class="section-kicker">Need help?</span>
+            <h3>Something missing?</h3>
+            <p>Use the menu above to find joining details, forms, and future guides.</p>
+        </div>
+    </aside>
+</div>
