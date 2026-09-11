@@ -1,7 +1,8 @@
 {
     "download": {
-        "baseUrl": "https://github.com/rumsteak08/Server/releases/download/V1.1/",
-        "filenameTemplate": "{ram}G_{minimap}_{lod}_Anim{animated}_Shader{shaders}_Adv{advanced}.zip"
+        "baseUrlBackup": "https://github.com/rumsteak08/Server/releases/download/V2/",
+        "baseUrl": "",
+        "filenameTemplate": "{ram}G_{lod}_Anim{animated}_Shader{shaders}_Adv{advanced}.zip"
     },
     "ram": {
         "controlId": "ram-slider",
@@ -19,27 +20,15 @@
     },
     "options": [
         {
-            "key": "minimap",
-            "controlId": "minimap-select",
-            "label": "Mini map",
-            "description": "Choose one mini map or leave it disabled.",
-            "default": "JourneyMap",
-            "options": [
-                { "value": "No", "label": "No", "urlElement": "No" },
-                { "value": "JourneyMap", "label": "Journey Map (recommended)", "urlElement": "JourneyMap" },
-                { "value": "Xaeros", "label": "Xaero's (lighter on resources)", "urlElement": "Xaeros" }
-            ]
-        },
-        {
             "key": "lod",
             "controlId": "lod-select",
             "label": "Level of detail",
-            "description": "Render farther into the world with an optional level-of-detail mod.",
-            "default": "No",
+            "description": "Voxy is enabled automatically at 6GB RAM and above.",
+            "minRam": 6,
+            "disabledUrlElement": "No",
+            "default": "Yes",
             "options": [
-                { "value": "No", "label": "No", "urlElement": "No" },
-                { "value": "DistantHorizons", "label": "Distant Horizons (6GB RAM min)", "urlElement": "DistantHorizons", "minRam": 6 },
-                { "value": "Voxy", "label": "Voxy (recommended, 6GB RAM min)", "urlElement": "Voxy", "minRam": 6 }
+                { "value": "Yes", "label": "Yes, using Voxy (6GB RAM min)", "urlElement": "Voxy" }
             ]
         },
         {
@@ -47,9 +36,10 @@
             "controlId": "animated-select",
             "label": "Animated mobs",
             "description": "Add extra mob animation features.",
-            "default": "No",
+            "minRam": 4,
+            "disabledUrlElement": "No",
+            "default": "Yes",
             "options": [
-                { "value": "No", "label": "No", "urlElement": "No" },
                 { "value": "Yes", "label": "Yes (4GB RAM min)", "urlElement": "Yes", "minRam": 4 }
             ]
         },
@@ -57,13 +47,13 @@
             "key": "shaders",
             "controlId": "shaders-select",
             "label": "Shaders",
-            "description": "Choose a shader preset. Higher presets need more memory.",
-            "default": "No",
+            "description": "Shaders are enabled automatically at 6GB RAM and above.",
+            "minRam": 6,
+            "disabledUrlElement": "No",
+            "default": "Yes",
             "options": [
                 { "value": "No", "label": "No", "urlElement": "No" },
-                { "value": "Decent", "label": "Decent (6GB RAM min)", "urlElement": "Decent", "minRam": 6 },
-                { "value": "Exceptional", "label": "Exceptional (8GB RAM min)", "urlElement": "Exceptional", "minRam": 8 },
-                { "value": "Incredible", "label": "Incredible (8GB RAM min and Voxy required)", "urlElement": "Incredible", "minRam": 8, "requires": [{ "key": "lod", "equals": "Voxy" }] }
+                { "value": "Yes", "label": "Yes (6GB RAM min)", "urlElement": "Yes" }
             ]
         },
         {
@@ -81,7 +71,13 @@
     "warnings": [
         {
             "targetId": "dh-warning",
-            "when": { "key": "lod", "equalsAny": ["DistantHorizons", "Voxy"] }
+            "when": {
+                "minRam": 6,
+                "all": [
+                    { "key": "lod", "equals": "Yes" },
+                    { "key": "shaders", "equals": "Yes" }
+                ]
+            }
         }
     ]
 }

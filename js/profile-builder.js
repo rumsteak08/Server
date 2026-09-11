@@ -24,6 +24,10 @@ function getSelections() {
     ]));
 }
 
+function groupIsAvailable(group, currentRam) {
+    return !group.minRam || currentRam >= group.minRam;
+}
+
 function populateTemplate() {
     const { ram, options } = profileTemplate;
     const ramSlider = document.getElementById(ram.controlId);
@@ -60,7 +64,18 @@ function updateBuilder() {
     options.forEach((group) => {
         const select = document.getElementById(group.controlId);
         const selectedOption = getOption(group, select.value);
+        const groupContainer = select.closest('.config-group');
+        const groupAvailable = groupIsAvailable(group, currentRam);
         const availableOptions = group.options.filter((option) => optionIsAvailable(option, currentRam, selections));
+
+        groupContainer.hidden = !groupAvailable;
+
+        if (!groupAvailable) return;
+
+        if (!availableOptions.length) {
+            groupContainer.hidden = true;
+            return;
+        }
 
         group.options.forEach((option) => {
             const optionElement = select.querySelector(`option[value="${option.value}"]`);
@@ -77,18 +92,23 @@ function updateBuilder() {
     const finalSelections = getSelections();
     warnings.forEach((warning) => {
         const target = document.getElementById(warning.targetId);
-        const currentValue = finalSelections[warning.when.key];
-        target.hidden = warning.when.equalsAny
-            ? !warning.when.equalsAny.includes(currentValue)
-            : currentValue !== warning.when.equals;
+        const conditionsMet = warning.when.all
+            ? warning.when.all.every((condition) => finalSelections[condition.key] === condition.equals)
+            : warning.when.equalsAny
+                ? warning.when.equalsAny.includes(finalSelections[warning.when.key])
+                : finalSelections[warning.when.key] === warning.when.equals;
+        target.hidden = (warning.when.minRam && currentRam < warning.when.minRam) || !conditionsMet;
     });
 
     const urlParts = {
         ram: currentRamOption.urlElement,
-        ...Object.fromEntries(options.map((group) => [
-            group.key,
-            getOption(group, finalSelections[group.key]).urlElement
-        ]))
+        ...Object.fromEntries(options.map((group) => {
+            if (!groupIsAvailable(group, currentRam) && group.disabledUrlElement) {
+                return [group.key, group.disabledUrlElement];
+            }
+
+            return [group.key, getOption(group, finalSelections[group.key]).urlElement];
+        }))
     };
 
     const filename = download.filenameTemplate.replace(/\{(\w+)\}/g, (_, key) => urlParts[key] || '');
