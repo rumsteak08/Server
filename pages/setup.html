@@ -29,58 +29,16 @@
 
         <article class="step" id="builder">
             <span class="step-number">Step 03</span>
-            <h2>Build your profile</h2>
-            <p>Choose the options that suit your computer. The import link updates as you make changes.</p>
-            <p>This is intended as a starting point. Everything is on default settings, but this should be fine for most players. ChatGPT (or your LLM of choice) can be of great help with this, and I am sure they have already scraped this page so have context to help.</p>
-            <p>And if anyone wants more presets, feel free to tell me and you can create the 300+ I was initially planning before actually doing the maths on it.</p>
-            <div class="panel">
-                <h3>Always included</h3>
-                <ul class="mod-list">
-                    <li>Performance mods</li>
-                    <li>Connected Textures</li>
-                    <li>Improved sound physics</li>
-                    <li>Unique Enchanted Books Textures</li>
-                    <li>Really Enough Items</li>
-                    <li>Potion Guide in Brewing Stand UI</li>
-                    <li>Free Cam</li>
-                    <li>Simple Voice Chat</li>
-                    <li>No Chat Restrictions</li>
-                    <li>Mouse Tweaks</li>
-                    <li>Show food item saturation</li>
-                    <li>Paste text into books</li>
-                    <li>Shulker Box Preview</li>
-                    <li>C to Zoom</li>
-                    <li>Clearer Wither Hearts</li>
-                    <li>Invisible Totems in off hand *</li>
-                    <li>No pumpkin overlays *</li>
-                    <li>Lower Shield *</li>
-                    <li>Short Sword *</li>
-                    <li>Small Utility Items *</li>
-                    <li>Journey Map</li>
-                    <li>Fullbright (optional resource pack)</li>
-                </ul>
-                <p>* will be in one resource pack called "Unobtrusive".</p>
-            </div>
-            <div class="config-container" aria-label="Profile options">
-                <div class="config-group">
-                    <label for="ram-slider"><span data-config-label="ram">Allocated RAM</span>: <span id="ram-display">Loading...</span></label>
-                    <p class="config-desc" data-config-description="ram">Loading profile options...</p>
-                    <input type="range" id="ram-slider" min="0" max="0" step="1" value="0">
-                </div>
-                <div class="config-group"><label for="lod-select"><span data-config-label="lod">Level of detail</span></label><p class="config-desc" data-config-description="lod"></p><select id="lod-select" data-option-group="lod"></select></div>
-                <div class="config-group"><label for="animated-select"><span data-config-label="animated">Animated mobs</span></label><p class="config-desc" data-config-description="animated"></p><select id="animated-select" data-option-group="animated"></select></div>
-                <div class="config-group"><label for="shaders-select"><span data-config-label="shaders">Shaders</span></label><p class="config-desc" data-config-description="shaders"></p><select id="shaders-select" data-option-group="shaders"></select></div>
-                <div class="config-group"><label for="adv-select"><span data-config-label="advanced">Advanced mods</span></label><p class="config-desc" data-config-description="advanced"></p><select id="adv-select" data-option-group="advanced"></select></div>
-            </div>
-            <div class="alert-note" id="dh-warning" hidden><strong>Heads up:</strong> When shaders and Voxy are both enabled, items can occasionally appear blank in inventories. Press <strong>F3+T</strong> to refresh resources.</div>
-            <div class="note"><strong>Voxy and Distant Horizons:</strong> Their data is not pre-cached because it adds around 4GB per version. After the server reset, this data will be set up server-side, so you do not need to pre-cache it.</div>
+            <h2>Add to game</h2>
             <ol>
-                <li>Copy your customized profile link.</li>
+                <li>Copy the link link.</li>
                 <li>In Prism Launcher, select <strong>Add Instance</strong>.</li>
                 <li>Choose <strong>Import</strong>, paste the link, and confirm.</li>
+                <li>If you want, add other mods such as Carpet Mod, MiniHUD, Shaders.</li>
+                <li>If you want to, change the RAM allocation of the profile.</li>
             </ol>
             <div class="link-row">
-                <code id="dynamic-link">Loading profile link...</code>
+                <code id="dynamic-link">https://github.com/rumsteak08/Server/releases/download/V3/Durham.S2.mrpack</code>
                 <button class="copy-button" id="copy-link" type="button">Copy</button>
             </div>
             <p><em>When the download finishes, double-click the new profile icon to start playing.</em></p>

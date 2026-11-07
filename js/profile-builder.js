@@ -128,7 +128,7 @@ function updateBuilder() {
     };
 
     const filename = download.filenameTemplate.replace(/\{(\w+)\}/g, (_, key) => urlParts[key] || '');
-    document.getElementById('dynamic-link').textContent = `${download.baseUrl}${filename}`;
+    document.getElementById('dynamic-link').textContent = 'https://github.com/rumsteak08/Server/releases/download/V3/Durham.S2.mrpack';
 }
 
 async function loadTemplate() {
@@ -142,7 +142,7 @@ export async function bindProfileBuilder() {
         await loadTemplate();
         populateTemplate();
     } catch (error) {
-        document.getElementById('dynamic-link').textContent = 'Profile template unavailable.';
+        document.getElementById('dynamic-link').textContent = 'https://github.com/rumsteak08/Server/releases/download/V3/Durham.S2.mrpack';
         console.error(error);
         return;
     }
